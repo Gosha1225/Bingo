@@ -1,0 +1,409 @@
+.scalable-wrapper {
+  resize: both;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background: #4f4f4f;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.scalable-wrapper__content {
+  width: 540px;
+  height: 960px;
+  background: rgb(243, 243, 243);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+}
+
+.first-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.upper-box-background {
+  left: 0px;
+}
+
+.upper-box-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+}
+
+.menu {
+  left: 220px;
+  top: 18px;
+}
+
+.score {
+  top: 10px;
+  left: -50px;
+}
+
+.time {
+  top: 10px;
+  left: -250px;
+}
+
+.balls {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  width: 90%;
+  top: 190px;
+}
+
+.ball-number1 {
+  left: 0px;
+}
+
+.ball-number2 {
+  left: 90px;
+}
+
+.ball-number3 {
+  left: 180px;
+}
+
+.ball-number4 {
+  left: 270px;
+}
+
+.ball-number5 {
+  left: 390px;
+}
+
+.table-name {
+  position: absolute;
+  display: flex;
+  width: 95%;
+  top: 220px;
+  left: 12px;
+}
+
+.name {
+  width: 97px;
+}
+
+.B {
+  left: 0px;
+  background-color: red;
+}
+
+.I {
+  left: 102px;
+  background-color: green;
+}
+
+.N {
+  left: 204px;
+  background-color: aqua;
+}
+
+.G {
+  left: 308px;
+  background-color: purple;
+}
+
+.O {
+  left: 412px;
+  background-color: orange;
+}
+
+.play-board {
+  position: absolute;
+  width: 97%;
+  top: 280px;
+}
+
+.first-row {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100px;
+}
+
+.second-row {
+  position: absolute;
+  width: 100%;
+  top: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100px;
+}
+
+.third-row {
+  position: absolute;
+  width: 100%;
+  top: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100px;
+}
+
+.forth-row {
+  position: absolute;
+  width: 100%;
+  top: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100px;
+}
+
+.fifth-row {
+  position: absolute;
+  width: 100%;
+  top: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100px;
+}
+
+.cell {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cell1 {
+  left: 0px;
+}
+
+.cell2 {
+  left: 105px;
+}
+
+.cell3 {
+  left: 210px;
+}
+
+.cell4 {
+  left: 315px;
+}
+
+.cell5 {
+  left: 420px;
+}
+
+.cell6 {
+  left: 0px;
+}
+
+.cell7 {
+  left: 105px;
+}
+
+.cell8 {
+  left: 210px;
+}
+
+.cell9 {
+  left: 315px;
+}
+
+.cell10 {
+  left: 420px;
+}
+
+.cell11 {
+  left: 0px;
+}
+
+.cell12 {
+  left: 105px;
+}
+
+.cell13 {
+  left: 210px;
+}
+
+.cell14 {
+  left: 315px;
+}
+
+.cell15 {
+  left: 420px;
+}
+
+.cell16 {
+  left: 0px;
+}
+
+.cell17 {
+  left: 105px;
+}
+
+.cell18 {
+  left: 210px;
+}
+
+.cell19 {
+  left: 315px;
+}
+
+.cell20 {
+  left: 420px;
+}
+
+.cell21 {
+  left: 0px;
+}
+
+.cell22 {
+  left: 105px;
+}
+
+.cell23 {
+  left: 210px;
+}
+
+.cell24 {
+  left: 315px;
+}
+
+.cell25 {
+  left: 420px;
+}
+
+.number {
+  width: 100px;
+}
+
+.purple-board{
+  opacity: 0;
+}
+
+.footer {
+  position: absolute;
+  width: 97%;
+  height: 110px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  top: 810px;
+}
+
+.bar {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  left: 12px;
+  width: 100px;
+  max-width: 160px;
+  height: 55px;
+  border-radius: 32px;
+  background: linear-gradient(
+    0deg,
+    rgba(109, 7, 255, 1) 0%,
+    rgba(183, 122, 249, 1) 100%
+  );
+}
+
+.boarder {
+  left: 10px;
+}
+
+.clock {
+  left: 219px;
+}
+
+.bingo {
+  left: 350px;
+}
+
+.victory-screen {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  /* top: 0px; */
+  top: -1920px;
+  align-items: center;
+}
+
+.logo {
+  left: 115px;
+  top: 100px;
+}
+
+.victory-money {
+  top: 0px;
+}
+
+.victory-text {
+  top: 560px;
+}
+
+.victory-cash {
+  top: 610px;
+}
+
+.victory-download {
+  position: absolute;
+  top: 740px;
+}
+
+.fail-screen {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  /* top: 0px; */
+  top: -1920px;
+  align-items: center;
+}
+
+.fail-money {
+  top: 180px;
+}
+
+.fail-text {
+  top: 270px;
+  left: 40px;
+}
+
+.fail-cash {
+  top: 320px;
+  left: 340px;
+}
+
+.fail-download {
+  position: absolute;
+  top: 740px;
+}
+
+.hand {
+  top: 1620px;
+  left: 496px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.hidden {
+  display: none;
+}
