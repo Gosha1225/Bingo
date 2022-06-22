@@ -31,6 +31,11 @@ import failText1 from "../../assets/Playable_1/EARNED.png";
 import failText2 from "../../assets/Playable_1/$5.png";
 import failLink from "../../assets/Playable_1/REDEEM_NOW.png";
 
+import blur from "../../assets/Playable_1/Blur.png";
+import hand from "../../assets/Playable_1/Hand.png";
+
+setSource(document.querySelector(".blur"), blur);
+
 function setSource(el, source) {
   el.src = el.src || source;
 }
@@ -39,7 +44,7 @@ setSource(document.querySelector(".first-background"), firstBackground);
 setSource(document.querySelector(".upper-box-background"), upperBox);
 setSource(document.querySelector(".menu"), menu);
 
-const ballsImg = [ball1, ball2, ball3, ball4, ball5];
+const ballsImg = [ball5, ball1, ball2, ball3, ball4];
 document.querySelectorAll(".ball-number").forEach((el, index) => {
   setSource(el, ballsImg[index]);
 });
@@ -50,6 +55,14 @@ document.querySelectorAll(".white-board").forEach((el) => {
 
 document.querySelectorAll(".purple-board").forEach((el) => {
   setSource(el, purple);
+});
+
+document.querySelectorAll(".yellow-board").forEach((el) => {
+  setSource(el, yellow);
+});
+
+document.querySelectorAll(".scarab-board").forEach((el) => {
+  setSource(el, scarab);
 });
 
 setSource(document.querySelector(".boarder"), empty);
@@ -63,6 +76,8 @@ document.querySelectorAll(".secondbackground").forEach((el) => {
 document.querySelectorAll(".logo").forEach((el) => {
   setSource(el, logo);
 });
+
+setSource(document.querySelector(".hand"), hand);
 
 setSource(document.querySelector(".victory-money"), money);
 setSource(document.querySelector(".victory-text"), victoryText1);

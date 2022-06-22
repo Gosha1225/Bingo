@@ -62,28 +62,39 @@
   position: absolute;
   display: flex;
   align-items: flex-end;
-  width: 90%;
-  top: 190px;
+  width: 97%;
+  top: 100px;
+  left: 428px;
 }
 
 .ball-number1 {
   left: 0px;
+  top: -10px;
+  z-index: 5;
 }
 
 .ball-number2 {
-  left: 90px;
+  left: 115px;
+  top: 0px;
+  transform: scale(1.25);
 }
 
 .ball-number3 {
-  left: 180px;
+  top: 0px;
+  left: 230px;
+  transform: scale(1.25);
 }
 
 .ball-number4 {
-  left: 270px;
+  top: 0px;
+  left: 345px;
+  transform: scale(1.25);
 }
 
 .ball-number5 {
-  left: 390px;
+  top: 0px;
+  left: 460px;
+  transform: scale(1.25);
 }
 
 .table-name {
@@ -275,6 +286,7 @@
 
 .cell23 {
   left: 210px;
+  z-index: 5;
 }
 
 .cell24 {
@@ -289,8 +301,16 @@
   width: 100px;
 }
 
-.purple-board{
+.purple-board {
   opacity: 0;
+}
+
+.yellow-board {
+  opacity: 0;
+}
+
+.scarab-board {
+  left: 11px;
 }
 
 .footer {
@@ -340,8 +360,9 @@
   flex-direction: column;
   background-color: white;
   /* top: 0px; */
-  top: -1920px;
+  top: -960px;
   align-items: center;
+  z-index: 6;
 }
 
 .logo {
@@ -374,8 +395,9 @@
   flex-direction: column;
   background-color: white;
   /* top: 0px; */
-  top: -1920px;
+  top: -960px;
   align-items: center;
+  z-index: 6;
 }
 
 .fail-money {
@@ -397,11 +419,16 @@
   top: 740px;
 }
 
-.hand {
-  top: 1620px;
-  left: 496px;
-  pointer-events: none;
+.blur {
+  top: 70px;
   z-index: 5;
+}
+
+.hand {
+  top: 850px;
+  left: 220px;
+  pointer-events: none;
+  z-index: 6;
 }
 
 .hidden {
