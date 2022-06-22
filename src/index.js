@@ -14,6 +14,7 @@ import {
   firstBallAnimation,
   forthBallAnimation,
   handAnimation,
+  hideChoose,
   secondBallAnimation,
   thirdBallAnimation,
   victoryScreenAnimation,
@@ -35,8 +36,6 @@ function getMobileOperatingSystem() {
 }
 
 handleResize();
-getMobileOperatingSystem();
-
 downloadBtnAnimation();
 
 // backCounting();
@@ -53,9 +52,11 @@ async function listener(event) {
     firstBallAnimation();
     ballsPanelAnimation();
     blurAnimation();
+    hideChoose();
     document.querySelector(".hand").remove();
     await appearAnimation(event.currentTarget.children[1]);
     document.querySelector(".blur").remove();
+    document.querySelector(".choose").remove();
   }
   if (count == 2) {
     if (event.currentTarget.classList.contains("cell3")) {

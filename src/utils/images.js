@@ -33,8 +33,10 @@ import failLink from "../../assets/Playable_1/REDEEM_NOW.png";
 
 import blur from "../../assets/Playable_1/Blur.png";
 import hand from "../../assets/Playable_1/Hand.png";
+import choose from "../../assets/Playable_1/choose.png";
 
 setSource(document.querySelector(".blur"), blur);
+setSource(document.querySelector(".choose"), choose);
 
 function setSource(el, source) {
   el.src = el.src || source;

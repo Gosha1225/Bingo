@@ -424,6 +424,11 @@
   z-index: 5;
 }
 
+.choose {
+  top: 300px;
+  z-index: 5;
+}
+
 .hand {
   top: 850px;
   left: 220px;

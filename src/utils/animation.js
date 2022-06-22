@@ -49,7 +49,7 @@ export function appearAnimation(target) {
 
 export function yellowAnimation() {
   anime({
-    targets: '.yellow-board',
+    targets: ".yellow-board",
     complete: scarabAnimation,
     opacity: [
       { value: 0, duration: 200 },
@@ -82,6 +82,17 @@ export function blurAnimation() {
       ],
       easing: "linear",
     });
+  });
+}
+
+export function hideChoose() {
+  anime({
+    targets: ".choose",
+    opacity: [
+      { value: 1, duration: 200 },
+      { value: 0, duration: 200 },
+    ],
+    easing: "linear",
   });
 }
 
