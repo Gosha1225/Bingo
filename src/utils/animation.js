@@ -15,7 +15,7 @@ export function failScreenAnimation() {
     targets: ".fail-screen",
     top: "0px",
     duration: 900,
-    delay: 2000,
+    delay: 1000,
     easing: "easeInOutQuart",
   });
 }
