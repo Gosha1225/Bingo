@@ -430,12 +430,22 @@
 }
 
 .hand {
-  top: 850px;
-  left: 220px;
+  top: 737px;
+  left: 262px;
   pointer-events: none;
   z-index: 6;
 }
 
 .hidden {
   display: none;
+}
+
+.ball-stroke {
+  border: 5px solid rgb(255, 242, 65);
+  border-radius: 50%;
+}
+
+.cell-stroke {
+  border: 5px solid rgb(255, 242, 65);
+  border-radius: 10px;
 }

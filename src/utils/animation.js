@@ -150,11 +150,12 @@ export function fifthBallAnimation() {
 export function handAnimation() {
   anime({
     targets: ".hand",
-    delay: 500,
-    duration: 1000,
-    top: "722px",
-    left: "261px",
-    easing: "linear",
+    scale: [
+      { value: 1 },
+      { value: 1.15, duration: 900 },
+      { value: 1, duration: 900 },
+    ],
     loop: true,
+    easing: "linear",
   });
 }

@@ -53,6 +53,8 @@ async function listener(event) {
     ballsPanelAnimation();
     blurAnimation();
     hideChoose();
+    document.querySelector(".ball-number1").classList.remove("ball-stroke");
+    document.querySelector(".white_10 ").classList.remove("cell-stroke");
     document.querySelector(".hand").remove();
     await appearAnimation(event.currentTarget.children[1]);
     document.querySelector(".blur").remove();
