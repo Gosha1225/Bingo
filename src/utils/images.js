@@ -11,6 +11,7 @@ import ball5 from "../../assets/Playable_1/10.png";
 
 import purple from "../../assets/Playable_1/purple.png";
 import white from "../../assets/Playable_1/white.png";
+import red from "../../assets/Playable_1/Red.png";
 import yellow from "../../assets/Playable_1/yellow.png";
 import scarab from "../../assets/Playable_1/scarab.png";
 
@@ -22,6 +23,7 @@ import secondBackground from "../../assets/Playable_1/BG2.png";
 
 import logo from "../../assets/Playable_1/Logo.png";
 import money from "../../assets/Playable_1/CashPile.png";
+import light from "../../assets/Playable_1/light.png";
 
 import victoryText1 from "../../assets/Playable_1/TAKE_YOUR.png";
 import victoryText2 from "../../assets/Playable_1/CASH_copy.png";
@@ -59,6 +61,10 @@ document.querySelectorAll(".purple-board").forEach((el) => {
   setSource(el, purple);
 });
 
+document.querySelectorAll(".red-board").forEach((el) => {
+  setSource(el, red);
+});
+
 document.querySelectorAll(".yellow-board").forEach((el) => {
   setSource(el, yellow);
 });
@@ -73,6 +79,10 @@ setSource(document.querySelector(".bingo"), bingo);
 
 document.querySelectorAll(".secondbackground").forEach((el) => {
   setSource(el, secondBackground);
+});
+
+document.querySelectorAll(".light").forEach((el) => {
+  setSource(el, light);
 });
 
 document.querySelectorAll(".logo").forEach((el) => {

@@ -15,6 +15,8 @@ import {
   forthBallAnimation,
   handAnimation,
   hideChoose,
+  lightAnimation,
+  redStrokeAnimation,
   secondBallAnimation,
   thirdBallAnimation,
   victoryScreenAnimation,
@@ -37,6 +39,7 @@ function getMobileOperatingSystem() {
 
 handleResize();
 downloadBtnAnimation();
+lightAnimation();
 
 // backCounting();
 let count = 0;
@@ -64,6 +67,9 @@ async function listener(event) {
     if (event.currentTarget.classList.contains("cell3")) {
       victoryCount++;
     }
+    if (!event.currentTarget.classList.contains("cell3")) {
+      redStrokeAnimation(event.currentTarget.children[2]);
+    }
     event.currentTarget.removeEventListener("pointerdown", listener);
     secondBallAnimation();
     ballsPanelAnimation();
@@ -72,6 +78,9 @@ async function listener(event) {
   if (count == 3) {
     if (event.currentTarget.classList.contains("cell18")) {
       victoryCount++;
+    }
+    if (!event.currentTarget.classList.contains("cell18")) {
+      redStrokeAnimation(event.currentTarget.children[2]);
     }
     event.currentTarget.removeEventListener("pointerdown", listener);
     thirdBallAnimation();
@@ -82,6 +91,9 @@ async function listener(event) {
     if (event.currentTarget.classList.contains("cell13")) {
       victoryCount++;
     }
+    if (!event.currentTarget.classList.contains("cell13")) {
+      redStrokeAnimation(event.currentTarget.children[2]);
+    }
     event.currentTarget.removeEventListener("pointerdown", listener);
     forthBallAnimation();
     ballsPanelAnimation();
@@ -90,6 +102,9 @@ async function listener(event) {
   if (count == 5) {
     if (event.currentTarget.classList.contains("cell8")) {
       victoryCount++;
+    }
+    if (!event.currentTarget.classList.contains("cell8")) {
+      redStrokeAnimation(event.currentTarget.children[2]);
     }
     event.currentTarget.removeEventListener("pointerdown", listener);
     fifthBallAnimation();

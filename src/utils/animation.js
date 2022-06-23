@@ -147,6 +147,24 @@ export function fifthBallAnimation() {
   });
 }
 
+export function redStrokeAnimation(target) {
+  anime({
+    targets: target,
+    opacity: [{ value: 0 }, { value: 1, duration: 400 }],
+    easing: "linear",
+  });
+}
+
+export function lightAnimation() {
+  anime({
+    targets: ".light",
+    duration: 13000,
+    rotate: "1turn",
+    loop: true,
+    easing: "linear",
+  });
+}
+
 export function handAnimation() {
   anime({
     targets: ".hand",
