@@ -149,8 +149,6 @@ function backCounting() {
   }
 }
 
-backCounting();
-
 function firstBallAnimation() {
   firstScaleBallAnimation();
   firstRotateBallAnimation();
@@ -214,6 +212,7 @@ function doBingo() {
     secondBallAnimation();
     ballsPanelAnimation();
     setTimeout(() => {
+      backCounting();
       thirdBallAnimation();
       ballsPanelAnimation();
       reversBlurAnimation();
