@@ -64,37 +64,61 @@
   align-items: flex-end;
   width: 97%;
   top: 100px;
-  left: 428px;
+  left: 540px;
 }
 
-.ball-number1 {
+.ball {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  transform-origin: center;
+  transform: rotate(0deg);
+}
+
+.ball1 {
+  position: absolute;
   left: 0px;
-  top: -10px;
+  top: 0px;
+}
+
+.ball2 {
+  position: absolute;
+  left: 115px;
+  top: 0px;
+}
+
+.ball3 {
+  position: absolute;
+  top: 0px;
+  left: 230px;
   z-index: 5;
 }
 
-.ball-number2 {
-  left: 115px;
-  top: 0px;
-  transform: scale(1.25);
-}
-
-.ball-number3 {
-  top: 0px;
-  left: 230px;
-  transform: scale(1.25);
-}
-
-.ball-number4 {
+.ball4 {
+  position: absolute;
   top: 0px;
   left: 345px;
-  transform: scale(1.25);
 }
 
-.ball-number5 {
+.ball5 {
+  position: absolute;
   top: 0px;
   left: 460px;
-  transform: scale(1.25);
+}
+
+.ball6 {
+  position: absolute;
+  top: 0px;
+  left: 575px;
+}
+
+.ball7 {
+  position: absolute;
+  top: 0px;
+  left: 690px;
 }
 
 .table-name {
@@ -404,7 +428,7 @@
   z-index: 6;
 }
 
-.fail-light{
+.fail-light {
   top: 180px;
 }
 

@@ -16,6 +16,12 @@
   font-size: 35pt;
 }
 
+.ball-text {
+  font-family: "Bebas-Regular";
+  color: black;
+  font-size: 25pt;
+}
+
 .score {
   font-family: "Bebas-Regular";
   color: white;

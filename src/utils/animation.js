@@ -85,6 +85,20 @@ export function blurAnimation() {
   });
 }
 
+export function reversBlurAnimation() {
+  return new Promise((res) => {
+    anime({
+      targets: ".blur",
+      complete: res,
+      opacity: [
+        { value: 0, duration: 200 },
+        { value: 1, duration: 200 },
+      ],
+      easing: "linear",
+    });
+  });
+}
+
 export function hideChoose() {
   anime({
     targets: ".choose",
@@ -96,53 +110,151 @@ export function hideChoose() {
   });
 }
 
-let leftValue = 428;
+export function reversHideChoose() {
+  anime({
+    targets: ".choose",
+    opacity: [
+      { value: 0, duration: 200 },
+      { value: 1, duration: 200 },
+    ],
+    easing: "linear",
+  });
+}
+
+let leftValue = 540;
 
 export function ballsPanelAnimation() {
   anime({
     targets: ".balls",
     duration: 500,
-    left: `${(leftValue = leftValue - 108)}px`,
+    left: `${(leftValue = leftValue - 115)}px`,
     easing: "linear",
   });
 }
 
-export function firstBallAnimation() {
-  anime({
-    targets: ".ball-number1",
-    scale: [{ value: 1 }, { value: 0.82, duration: 500 }],
-    easing: "linear",
-  });
-}
+let turns1 = 0;
+let turns2 = 0;
+let turns3 = 0;
+let turns4 = 0;
+let turns5 = 0;
+let turns6 = 0;
+let turns7 = 0;
 
-export function secondBallAnimation() {
+export function firstScaleBallAnimation() {
   anime({
-    targets: ".ball-number2",
+    targets: ".ball1",
     scale: [{ value: 1.25 }, { value: 1, duration: 500 }],
     easing: "linear",
   });
 }
 
-export function thirdBallAnimation() {
+export function firstRotateBallAnimation() {
   anime({
-    targets: ".ball-number3",
+    targets: ".ball1",
+    duration: 500,
+    rotate: `${(turns1 = turns1 - 1)}turn`,
+    easing: "linear",
+  });
+}
+
+export function secondScaleBallAnimation() {
+  anime({
+    targets: ".ball2",
     scale: [{ value: 1.25 }, { value: 1, duration: 500 }],
     easing: "linear",
   });
 }
 
-export function forthBallAnimation() {
+export function secondRotateBallAnimation() {
   anime({
-    targets: ".ball-number4",
+    targets: ".ball2",
+    duration: 500,
+    rotate: `${(turns2 = turns2 - 1)}turn`,
+    easing: "linear",
+  });
+}
+
+export function thirdScaleBallAnimation() {
+  anime({
+    targets: ".ball3",
     scale: [{ value: 1.25 }, { value: 1, duration: 500 }],
     easing: "linear",
   });
 }
 
-export function fifthBallAnimation() {
+export function thirdRotateBallAnimation() {
   anime({
-    targets: ".ball-number5",
+    targets: ".ball3",
+    duration: 500,
+    rotate: `${(turns3 = turns3 - 1)}turn`,
+    easing: "linear",
+  });
+}
+
+export function forthScaleBallAnimation() {
+  anime({
+    targets: ".ball4",
     scale: [{ value: 1.25 }, { value: 1, duration: 500 }],
+    easing: "linear",
+  });
+}
+
+export function forthRotateBallAnimation() {
+  anime({
+    targets: ".ball4",
+    duration: 500,
+    rotate: `${(turns4 = turns4 - 1)}turn`,
+    easing: "linear",
+  });
+}
+
+export function fifthScaleBallAnimation() {
+  anime({
+    targets: ".ball5",
+    scale: [{ value: 1.25 }, { value: 1, duration: 500 }],
+    easing: "linear",
+  });
+}
+
+export function fifthRotateBallAnimation() {
+  anime({
+    targets: ".ball5",
+    duration: 500,
+    rotate: `${(turns5 = turns5 - 1)}turn`,
+    easing: "linear",
+  });
+}
+
+export function sixthScaleBallAnimation() {
+  anime({
+    targets: ".ball6",
+    scale: [{ value: 1.25 }, { value: 1, duration: 500 }],
+    easing: "linear",
+  });
+}
+
+export function sixthRotateBallAnimation() {
+  anime({
+    targets: ".ball6",
+    duration: 500,
+    rotate: `${(turns6 = turns6 - 1)}turn`,
+    easing: "linear",
+  });
+}
+
+export function seventhScaleBallAnimation() {
+  anime({
+    targets: ".ball7",
+    scale: [{ value: 1.25 }, { value: 1, duration: 500 }],
+    easing: "linear",
+  });
+}
+
+export function seventhRotateBallAnimation() {
+  anime({
+    targets: ".ball7",
+    duration: 500,
+    rotate: `${(turns7 = turns7 - 1)}turn`,
     easing: "linear",
   });
 }

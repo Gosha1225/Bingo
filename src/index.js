@@ -10,15 +10,26 @@ import {
   blurAnimation,
   downloadBtnAnimation,
   failScreenAnimation,
-  fifthBallAnimation,
-  firstBallAnimation,
-  forthBallAnimation,
+  fifthRotateBallAnimation,
+  fifthScaleBallAnimation,
+  firstRotateBallAnimation,
+  firstScaleBallAnimation,
+  forthRotateBallAnimation,
+  forthScaleBallAnimation,
   handAnimation,
   hideChoose,
   lightAnimation,
   redStrokeAnimation,
-  secondBallAnimation,
-  thirdBallAnimation,
+  reversBlurAnimation,
+  reversHideChoose,
+  secondRotateBallAnimation,
+  secondScaleBallAnimation,
+  seventhRotateBallAnimation,
+  seventhScaleBallAnimation,
+  sixthRotateBallAnimation,
+  sixthScaleBallAnimation,
+  thirdRotateBallAnimation,
+  thirdScaleBallAnimation,
   victoryScreenAnimation,
   yellowAnimation,
 } from "./utils/animation";
@@ -52,11 +63,11 @@ async function listener(event) {
   if (count == 1) {
     victoryCount++;
     event.currentTarget.removeEventListener("pointerdown", listener);
-    firstBallAnimation();
+    forthBallAnimation();
     ballsPanelAnimation();
     blurAnimation();
     hideChoose();
-    document.querySelector(".ball-number1").classList.remove("ball-stroke");
+    document.querySelector(".ball-number3").classList.remove("ball-stroke");
     document.querySelector(".white_10 ").classList.remove("cell-stroke");
     document.querySelector(".hand").remove();
     await appearAnimation(event.currentTarget.children[1]);
@@ -71,7 +82,7 @@ async function listener(event) {
       redStrokeAnimation(event.currentTarget.children[2]);
     }
     event.currentTarget.removeEventListener("pointerdown", listener);
-    secondBallAnimation();
+    fifthBallAnimation();
     ballsPanelAnimation();
     await appearAnimation(event.currentTarget.children[1]);
   }
@@ -83,7 +94,7 @@ async function listener(event) {
       redStrokeAnimation(event.currentTarget.children[2]);
     }
     event.currentTarget.removeEventListener("pointerdown", listener);
-    thirdBallAnimation();
+    sixthBallAnimation();
     ballsPanelAnimation();
     await appearAnimation(event.currentTarget.children[1]);
   }
@@ -95,7 +106,7 @@ async function listener(event) {
       redStrokeAnimation(event.currentTarget.children[2]);
     }
     event.currentTarget.removeEventListener("pointerdown", listener);
-    forthBallAnimation();
+    seventhBallAnimation();
     ballsPanelAnimation();
     await appearAnimation(event.currentTarget.children[1]);
   }
@@ -107,7 +118,7 @@ async function listener(event) {
       redStrokeAnimation(event.currentTarget.children[2]);
     }
     event.currentTarget.removeEventListener("pointerdown", listener);
-    fifthBallAnimation();
+
     document.querySelectorAll(".cell").forEach((el) => {
       el.removeEventListener("pointerdown", listener);
     });
@@ -140,6 +151,81 @@ function backCounting() {
 
 backCounting();
 
-document.querySelectorAll(".cell").forEach((el) => {
-  el.addEventListener("pointerdown", listener);
-});
+function firstBallAnimation() {
+  firstScaleBallAnimation();
+  firstRotateBallAnimation();
+}
+
+function secondBallAnimation() {
+  firstRotateBallAnimation();
+  secondScaleBallAnimation();
+  secondRotateBallAnimation();
+}
+
+function thirdBallAnimation() {
+  firstRotateBallAnimation();
+  secondRotateBallAnimation();
+  thirdScaleBallAnimation();
+  thirdRotateBallAnimation();
+}
+
+function forthBallAnimation() {
+  firstRotateBallAnimation();
+  secondRotateBallAnimation();
+  thirdRotateBallAnimation();
+  forthScaleBallAnimation();
+  forthRotateBallAnimation();
+}
+
+function fifthBallAnimation() {
+  firstRotateBallAnimation();
+  secondRotateBallAnimation();
+  thirdRotateBallAnimation();
+  forthRotateBallAnimation();
+  fifthScaleBallAnimation();
+  fifthRotateBallAnimation();
+}
+
+function sixthBallAnimation() {
+  firstRotateBallAnimation();
+  secondRotateBallAnimation();
+  thirdRotateBallAnimation();
+  forthRotateBallAnimation();
+  fifthRotateBallAnimation();
+  sixthScaleBallAnimation();
+  sixthRotateBallAnimation();
+}
+
+function seventhBallAnimation() {
+  firstRotateBallAnimation();
+  secondRotateBallAnimation();
+  thirdRotateBallAnimation();
+  forthRotateBallAnimation();
+  fifthRotateBallAnimation();
+  sixthRotateBallAnimation();
+  seventhScaleBallAnimation();
+  seventhRotateBallAnimation();
+}
+
+function doBingo() {
+  firstBallAnimation();
+  ballsPanelAnimation();
+  setTimeout(() => {
+    secondBallAnimation();
+    ballsPanelAnimation();
+    setTimeout(() => {
+      thirdBallAnimation();
+      ballsPanelAnimation();
+      reversBlurAnimation();
+      reversHideChoose();
+      document.querySelector(".hand").classList.remove("hidden");
+      document.querySelector(".white_10").classList.add("cell-stroke");
+      document.querySelector(".ball-number3").classList.add("ball-stroke");
+      document.querySelectorAll(".cell").forEach((el) => {
+        el.addEventListener("pointerdown", listener);
+      });
+    }, 2000);
+  }, 2000);
+}
+
+doBingo();
