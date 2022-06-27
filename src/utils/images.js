@@ -3,9 +3,10 @@ import firstBackground from "../../assets/Playable_1/BG.png";
 import upperBox from "../../assets/Playable_1/Upper_Box.png";
 import menu from "../../assets/Playable_1/Menu.png";
 
-import ball1 from "../../assets/Balls/b.png";
-import ball2 from "../../assets/Balls/i.png";
-import ball3 from "../../assets/Balls/o.png";
+import ball1 from "../../assets/Balls_v2/green.png";
+import ball2 from "../../assets/Balls_v2/orange.png";
+import ball3 from "../../assets/Balls_v2/purple.png";
+import ball4 from "../../assets/Balls_v2/red.png";
 
 import purple from "../../assets/Playable_1/purple.png";
 import white from "../../assets/Playable_1/white.png";
@@ -46,7 +47,7 @@ setSource(document.querySelector(".first-background"), firstBackground);
 setSource(document.querySelector(".upper-box-background"), upperBox);
 setSource(document.querySelector(".menu"), menu);
 
-const ballsImg = [ball1, ball2, ball3, ball2, ball1, ball3, ball2, ball1];
+const ballsImg = [ball1, ball2, ball3, ball4, ball1, ball1, ball2, ball3];
 document.querySelectorAll(".ball-number").forEach((el, index) => {
   setSource(el, ballsImg[index]);
 });

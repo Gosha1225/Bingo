@@ -143,7 +143,11 @@ let turns7 = 0;
 export function firstScaleBallAnimation() {
   anime({
     targets: ".ball1",
-    scale: [{ value: 1.25 }, { value: 1, duration: 500 }],
+    scale: [
+      { value: 0.5 },
+      { value: 0.6, duration: 250 },
+      { value: 0.5, duration: 250 },
+    ],
     easing: "linear",
   });
 }
@@ -160,7 +164,11 @@ export function firstRotateBallAnimation() {
 export function secondScaleBallAnimation() {
   anime({
     targets: ".ball2",
-    scale: [{ value: 1.25 }, { value: 1, duration: 500 }],
+    scale: [
+      { value: 0.5 },
+      { value: 0.6, duration: 250 },
+      { value: 0.5, duration: 250 },
+    ],
     easing: "linear",
   });
 }
@@ -177,7 +185,11 @@ export function secondRotateBallAnimation() {
 export function thirdScaleBallAnimation() {
   anime({
     targets: ".ball3",
-    scale: [{ value: 1.25 }, { value: 1, duration: 500 }],
+    scale: [
+      { value: 0.5 },
+      { value: 0.6, duration: 250 },
+      { value: 0.5, duration: 250 },
+    ],
     easing: "linear",
   });
 }
@@ -194,7 +206,11 @@ export function thirdRotateBallAnimation() {
 export function forthScaleBallAnimation() {
   anime({
     targets: ".ball4",
-    scale: [{ value: 1.25 }, { value: 1, duration: 500 }],
+    scale: [
+      { value: 0.5 },
+      { value: 0.6, duration: 250 },
+      { value: 0.5, duration: 250 },
+    ],
     easing: "linear",
   });
 }
@@ -211,7 +227,11 @@ export function forthRotateBallAnimation() {
 export function fifthScaleBallAnimation() {
   anime({
     targets: ".ball5",
-    scale: [{ value: 1.25 }, { value: 1, duration: 500 }],
+    scale: [
+      { value: 0.5 },
+      { value: 0.6, duration: 250 },
+      { value: 0.5, duration: 250 },
+    ],
     easing: "linear",
   });
 }
@@ -228,7 +248,11 @@ export function fifthRotateBallAnimation() {
 export function sixthScaleBallAnimation() {
   anime({
     targets: ".ball6",
-    scale: [{ value: 1.25 }, { value: 1, duration: 500 }],
+    scale: [
+      { value: 0.5 },
+      { value: 0.6, duration: 250 },
+      { value: 0.5, duration: 250 },
+    ],
     easing: "linear",
   });
 }
@@ -245,7 +269,11 @@ export function sixthRotateBallAnimation() {
 export function seventhScaleBallAnimation() {
   anime({
     targets: ".ball7",
-    scale: [{ value: 1.25 }, { value: 1, duration: 500 }],
+    scale: [
+      { value: 0.5 },
+      { value: 0.6, duration: 250 },
+      { value: 0.5, duration: 250 },
+    ],
     easing: "linear",
   });
 }
