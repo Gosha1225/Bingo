@@ -10,29 +10,24 @@ import {
   blurAnimation,
   downloadBtnAnimation,
   failScreenAnimation,
-  fifthRotateBallAnimation,
-  fifthScaleBallAnimation,
-  firstRotateBallAnimation,
-  firstScaleBallAnimation,
-  forthRotateBallAnimation,
-  forthScaleBallAnimation,
   handAnimation,
   hideChoose,
   lightAnimation,
   redStrokeAnimation,
   reversBlurAnimation,
   reversHideChoose,
-  secondRotateBallAnimation,
-  secondScaleBallAnimation,
-  seventhRotateBallAnimation,
-  seventhScaleBallAnimation,
-  sixthRotateBallAnimation,
-  sixthScaleBallAnimation,
-  thirdRotateBallAnimation,
-  thirdScaleBallAnimation,
   victoryScreenAnimation,
   yellowAnimation,
 } from "./utils/animation";
+import {
+  fifthBallAnimation,
+  firstBallAnimation,
+  forthBallAnimation,
+  secondBallAnimation,
+  seventhBallAnimation,
+  sixthBallAnimation,
+  thirdBallAnimation,
+} from "./ballAnimations";
 
 function getMobileOperatingSystem() {
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -47,14 +42,6 @@ function getMobileOperatingSystem() {
       "https://apps.apple.com/us/app/idle-siege-army-tycoon-game/id1527417124";
   }
 }
-
-function handleDownloadBtn(){
-  // window.open('https://apps.apple.com/us/app/empire-bingo/id1584334464')
-  // dapi.openStoreUrl();
-  console.log(dapi);
-}
-
-document.querySelector('.link').addEventListener('pointerdown', handleDownloadBtn)
 
 handleResize();
 downloadBtnAnimation();
@@ -157,62 +144,6 @@ function backCounting() {
   }
 }
 
-function firstBallAnimation() {
-  firstScaleBallAnimation();
-  firstRotateBallAnimation();
-}
-
-function secondBallAnimation() {
-  firstRotateBallAnimation();
-  secondScaleBallAnimation();
-  secondRotateBallAnimation();
-}
-
-function thirdBallAnimation() {
-  firstRotateBallAnimation();
-  secondRotateBallAnimation();
-  thirdScaleBallAnimation();
-  thirdRotateBallAnimation();
-}
-
-function forthBallAnimation() {
-  firstRotateBallAnimation();
-  secondRotateBallAnimation();
-  thirdRotateBallAnimation();
-  forthScaleBallAnimation();
-  forthRotateBallAnimation();
-}
-
-function fifthBallAnimation() {
-  firstRotateBallAnimation();
-  secondRotateBallAnimation();
-  thirdRotateBallAnimation();
-  forthRotateBallAnimation();
-  fifthScaleBallAnimation();
-  fifthRotateBallAnimation();
-}
-
-function sixthBallAnimation() {
-  firstRotateBallAnimation();
-  secondRotateBallAnimation();
-  thirdRotateBallAnimation();
-  forthRotateBallAnimation();
-  fifthRotateBallAnimation();
-  sixthScaleBallAnimation();
-  sixthRotateBallAnimation();
-}
-
-function seventhBallAnimation() {
-  firstRotateBallAnimation();
-  secondRotateBallAnimation();
-  thirdRotateBallAnimation();
-  forthRotateBallAnimation();
-  fifthRotateBallAnimation();
-  sixthRotateBallAnimation();
-  seventhScaleBallAnimation();
-  seventhRotateBallAnimation();
-}
-
 function doBingo() {
   firstBallAnimation();
   ballsPanelAnimation();
@@ -237,48 +168,71 @@ function doBingo() {
 
 doBingo();
 
-window.onload = function(){
-  (dapi.isReady()) ? onReadyCallback() : dapi.addEventListener("ready", onReadyCallback); 
+window.onload = function () {
+  dapi.isReady()
+    ? onReadyCallback()
+    : dapi.addEventListener("ready", onReadyCallback);
   //here you can put other code that not related to dapi logic
- };
- 
- function onReadyCallback(){
+};
+
+function onReadyCallback() {
   //no need to listen to this event anymore
   dapi.removeEventListener("ready", onReadyCallback);
   let isAudioEnabled = !!dapi.getAudioVolume();
- 
- 
-  if(dapi.isViewable()){
-   adVisibleCallback({isViewable: true});
+
+  if (dapi.isViewable()) {
+    adVisibleCallback({ isViewable: true });
   }
- 
+
   dapi.addEventListener("viewableChange", adVisibleCallback);
   dapi.addEventListener("adResized", adResizeCallback);
   dapi.addEventListener("audioVolumeChange", audioVolumeChangeCallback);
+}
 
- }
- 
- function adVisibleCallback(event){
+function userClickedDownloadButton() {
+  if (mraid) {
+    mraid.openStoreUrl();
+    return;
+  }
+
+  if (dapi.isReady()) {
+    dapi.openStoreUrl();
+    return;
+  }
+  window.open("https://apps.apple.com/us/app/empire-bingo/id1584334464");
+}
+
+document.querySelectorAll(".link").forEach((el) => {
+  el.addEventListener("pointerdown", userClickedDownloadButton);
+});
+
+function adVisibleCallback(event) {
   console.log("isViewable " + event.isViewable);
-  if (event.isViewable){
-   screenSize = dapi.getScreenSize();
-   //START or RESUME the ad
+  if (event.isViewable) {
+    screenSize = dapi.getScreenSize();
+    //START or RESUME the ad
   } else {
-   //PAUSE the ad and MUTE sounds
+    //PAUSE the ad and MUTE sounds
   }
- }
- 
- function adResizeCallback(event){
+}
+
+function adResizeCallback(event) {
   screenSize = event;
-  console.log("ad was resized width " + event.width + " height " + event.height);
- }
- 
- function audioVolumeChangeCallback(volume){
+  console.log(
+    "ad was resized width " + event.width + " height " + event.height
+  );
+}
+
+function audioVolumeChangeCallback(volume) {
   let isAudioEnabled = !!volume;
- 
-  if (isAudioEnabled){
-   //START or turn on the sound
-  } else {
-   //PAUSE the turn off the sound
+
+  if (volume >= 0) {
+    console.log(volume);
   }
- }
+
+  if (isAudioEnabled) {
+    //START or turn on the sound
+  } else {
+    //PAUSE the turn off the sound
+  }
+}

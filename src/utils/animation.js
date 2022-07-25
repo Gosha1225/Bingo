@@ -22,7 +22,7 @@ export function failScreenAnimation() {
 
 export function downloadBtnAnimation() {
   anime({
-    targets: [".fail-download", "victory-download"],
+    targets: [".link"],
     scale: [
       { value: 1 },
       { value: 1.05, duration: 2000 },

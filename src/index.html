@@ -7,52 +7,128 @@
     <link rel="shortcut icon" href="#" />
     <title>Bingo</title>
     <script>
-      function getScript(e,i){var n=document.createElement("script");n.type="text/javascript",n.async=!0,i&&(n.onload=i),n.src=e,document.head.appendChild(n)}function parseMessage(e){var i=e.data,n=i.indexOf(DOLLAR_PREFIX+RECEIVE_MSG_PREFIX);if(-1!==n){var t=i.slice(n+2);return getMessageParams(t)}return{}}function getMessageParams(e){var i,n=[],t=e.split("/"),a=t.length;if(-1===e.indexOf(RECEIVE_MSG_PREFIX)){if(a>=2&&a%2===0)for(i=0;a>i;i+=2)n[t[i]]=t.length<i+1?null:decodeURIComponent(t[i+1])}else{var o=e.split(RECEIVE_MSG_PREFIX);void 0!==o[1]&&(n=JSON&&JSON.parse(o[1]))}return n}function getDapi(e){var i=parseMessage(e);if(!i||i.name===GET_DAPI_URL_MSG_NAME){var n=i.data;getScript(n,onDapiReceived)}}function invokeDapiListeners(){for(var e in dapiEventsPool)dapiEventsPool.hasOwnProperty(e)&&dapi.addEventListener(e,dapiEventsPool[e])}function onDapiReceived(){dapi=window.dapi,window.removeEventListener("message",getDapi),invokeDapiListeners()}function init(){window.dapi.isDemoDapi&&(window.parent.postMessage(DOLLAR_PREFIX+SEND_MSG_PREFIX+JSON.stringify({state:"getDapiUrl"}),"*"),window.addEventListener("message",getDapi,!1))}var DOLLAR_PREFIX="$$",RECEIVE_MSG_PREFIX="DAPI_SERVICE:",SEND_MSG_PREFIX="DAPI_AD:",GET_DAPI_URL_MSG_NAME="connection.getDapiUrl",dapiEventsPool={},dapi=window.dapi||{isReady:function(){return!1},addEventListener:function(e,i){dapiEventsPool[e]=i},removeEventListener:function(e){delete dapiEventsPool[e]},isDemoDapi:!0};init();
+      function getScript(e, i) {
+        var n = document.createElement("script");
+        (n.type = "text/javascript"),
+          (n.async = !0),
+          i && (n.onload = i),
+          (n.src = e),
+          document.head.appendChild(n);
+      }
+      function parseMessage(e) {
+        var i = e.data,
+          n = i.indexOf(DOLLAR_PREFIX + RECEIVE_MSG_PREFIX);
+        if (-1 !== n) {
+          var t = i.slice(n + 2);
+          return getMessageParams(t);
+        }
+        return {};
+      }
+      function getMessageParams(e) {
+        var i,
+          n = [],
+          t = e.split("/"),
+          a = t.length;
+        if (-1 === e.indexOf(RECEIVE_MSG_PREFIX)) {
+          if (a >= 2 && a % 2 === 0)
+            for (i = 0; a > i; i += 2)
+              n[t[i]] = t.length < i + 1 ? null : decodeURIComponent(t[i + 1]);
+        } else {
+          var o = e.split(RECEIVE_MSG_PREFIX);
+          void 0 !== o[1] && (n = JSON && JSON.parse(o[1]));
+        }
+        return n;
+      }
+      function getDapi(e) {
+        var i = parseMessage(e);
+        if (!i || i.name === GET_DAPI_URL_MSG_NAME) {
+          var n = i.data;
+          getScript(n, onDapiReceived);
+        }
+      }
+      function invokeDapiListeners() {
+        for (var e in dapiEventsPool)
+          dapiEventsPool.hasOwnProperty(e) &&
+            dapi.addEventListener(e, dapiEventsPool[e]);
+      }
+      function onDapiReceived() {
+        (dapi = window.dapi),
+          window.removeEventListener("message", getDapi),
+          invokeDapiListeners();
+      }
+      function init() {
+        window.dapi.isDemoDapi &&
+          (window.parent.postMessage(
+            DOLLAR_PREFIX +
+              SEND_MSG_PREFIX +
+              JSON.stringify({ state: "getDapiUrl" }),
+            "*"
+          ),
+          window.addEventListener("message", getDapi, !1));
+      }
+      var DOLLAR_PREFIX = "$$",
+        RECEIVE_MSG_PREFIX = "DAPI_SERVICE:",
+        SEND_MSG_PREFIX = "DAPI_AD:",
+        GET_DAPI_URL_MSG_NAME = "connection.getDapiUrl",
+        dapiEventsPool = {},
+        dapi = window.dapi || {
+          isReady: function () {
+            return !1;
+          },
+          addEventListener: function (e, i) {
+            dapiEventsPool[e] = i;
+          },
+          removeEventListener: function (e) {
+            delete dapiEventsPool[e];
+          },
+          isDemoDapi: !0,
+        };
+      init();
     </script>
   </head>
   <body>
     <div class="scalable-wrapper" id="scalable-wrapper">
       <div class="scalable-wrapper__content" id="scalable-wrapper__content">
         <div class="first-screen">
-          <img class="first-background app-img">
-          <img style="opacity: 0;" class="blur app-img">
-          <img style="opacity: 0;" class="choose app-img">
-          <img class="hand hidden app-img">
+          <img class="first-background app-img" />
+          <img style="opacity: 0" class="blur app-img" />
+          <img style="opacity: 0" class="choose app-img" />
+          <img class="hand hidden app-img" />
           <div class="upper-box">
-            <img class="upper-box-background app-img">
+            <img class="upper-box-background app-img" />
             <div class="upper-box-container">
               <p class="time app-text">00:15</p>
               <p class="score app-text">8,936</p>
-              <img class="menu app-img">
+              <img class="menu app-img" />
             </div>
           </div>
           <div class="balls">
-            <div style="transform: scale(0.5);" class="ball ball1">
-              <img  class="ball-number ball-number1 app-img">
+            <div style="transform: scale(0.5)" class="ball ball1">
+              <img class="ball-number ball-number1 app-img" />
               <p class="ball-text ball-text1 app-text">31</p>
             </div>
-            <div style="transform: scale(0.5);" class="ball ball2">
-              <img  class="ball-number ball-number2 app-img">
+            <div style="transform: scale(0.5)" class="ball ball2">
+              <img class="ball-number ball-number2 app-img" />
               <p class="ball-text ball-text1 app-text">65</p>
             </div>
-            <div style="transform: scale(0.5);" class="ball ball3">
-              <img  class="ball-number ball-number3 app-img">
+            <div style="transform: scale(0.5)" class="ball ball3">
+              <img class="ball-number ball-number3 app-img" />
               <p class="ball-text ball-text1 app-text">41</p>
             </div>
-            <div style="transform: scale(0.5);" class="ball ball4">
-              <img  class="ball-number ball-number4 app-img">
+            <div style="transform: scale(0.5)" class="ball ball4">
+              <img class="ball-number ball-number4 app-img" />
               <p class="ball-text ball-text1 app-text">39</p>
             </div>
-            <div style="transform: scale(0.5);" class="ball ball5">
-              <img  class="ball-number ball-number5 app-img">
+            <div style="transform: scale(0.5)" class="ball ball5">
+              <img class="ball-number ball-number5 app-img" />
               <p class="ball-text ball-text1 app-text">33</p>
             </div>
-            <div style="transform: scale(0.5);" class="ball ball6">
-              <img  class="ball-number ball-number6 app-img">
+            <div style="transform: scale(0.5)" class="ball ball6">
+              <img class="ball-number ball-number6 app-img" />
               <p class="ball-text ball-text1 app-text">38</p>
             </div>
-            <div style="transform: scale(0.5);" class="ball ball7">
-              <img  class="ball-number ball-number7 app-img">
+            <div style="transform: scale(0.5)" class="ball ball7">
+              <img class="ball-number ball-number7 app-img" />
               <p class="ball-text ball-text1 app-text">45</p>
             </div>
           </div>
@@ -65,204 +141,201 @@
           </div>
           <div class="play-board">
             <div class="first-row">
-              <div class="cell cell1">     
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+              <div class="cell cell1">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">12</p>
               </div>
               <div class="cell cell2">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">30</p>
               </div>
               <div class="cell cell3">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">39</p>
-                <img class="yellow-board app-img">
-                <img style="transform: scale(0);" class="scarab-board app-img">
+                <img class="yellow-board app-img" />
+                <img style="transform: scale(0)" class="scarab-board app-img" />
               </div>
               <div class="cell cell4">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">46</p>
               </div>
               <div class="cell cell5">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">69</p>
               </div>
             </div>
             <div class="second-row">
               <div class="cell cell6">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">5</p>
               </div>
               <div class="cell cell7">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">16</p>
               </div>
               <div class="cell cell8">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">45</p>
-                <img class="yellow-board app-img">
-                <img style="transform: scale(0);" class="scarab-board app-img">
+                <img class="yellow-board app-img" />
+                <img style="transform: scale(0)" class="scarab-board app-img" />
               </div>
               <div class="cell cell9">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">59</p>
               </div>
               <div class="cell cell10">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">75</p>
               </div>
             </div>
             <div class="third-row">
               <div class="cell cell11">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">2</p>
               </div>
               <div class="cell cell12">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">27</p>
               </div>
               <div class="cell cell13">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">38</p>
-                <img class="yellow-board app-img">
-                <img style="transform: scale(0);" class="scarab-board app-img">
+                <img class="yellow-board app-img" />
+                <img style="transform: scale(0)" class="scarab-board app-img" />
               </div>
               <div class="cell cell14">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">48</p>
               </div>
               <div class="cell cell15">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">71</p>
               </div>
             </div>
             <div class="forth-row">
               <div class="cell cell16">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">14</p>
               </div>
               <div class="cell cell17">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">25</p>
               </div>
               <div class="cell cell18">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">33</p>
-                <img class="yellow-board app-img">
-                <img style="transform: scale(0);" class="scarab-board app-img">
+                <img class="yellow-board app-img" />
+                <img style="transform: scale(0)" class="scarab-board app-img" />
               </div>
               <div class="cell cell19">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">60</p>
               </div>
               <div class="cell cell20">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">64</p>
               </div>
             </div>
             <div class="fifth-row">
               <div class="cell cell21">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">9</p>
               </div>
               <div class="cell cell22">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">17</p>
               </div>
               <div class="cell cell23">
-                <img class="white-board white_10 app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board white_10 app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">41</p>
-                <img class="yellow-board app-img">
-                <img style="transform: scale(0);" class="scarab-board app-img">
+                <img class="yellow-board app-img" />
+                <img style="transform: scale(0)" class="scarab-board app-img" />
               </div>
               <div class="cell cell24">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">54</p>
               </div>
               <div class="cell cell25">
-                <img class="white-board app-img">
-                <img class="purple-board app-img">
-                <img class="red-board app-img">
+                <img class="white-board app-img" />
+                <img class="purple-board app-img" />
+                <img class="red-board app-img" />
                 <p class="number app-text">73</p>
               </div>
             </div>
           </div>
           <div class="footer">
             <div class="bar"></div>
-            <img class="boarder app-img">
-            <img class="clock app-img">
-            <img class="bingo app-img">
+            <img class="boarder app-img" />
+            <img class="clock app-img" />
+            <img class="bingo app-img" />
           </div>
-      </div>
-      <div class="victory-screen">
-        <img class="secondbackground app-img" />
-        <img class="light victory-light app-img" />
-        <img class="logo app-img" />
-        <img class="victory-money app-img" />
-        <img class="victory-text app-img" />
-        <img class="victory-cash app-img" />
-        <button class="link"><img class="victory-download app-img"
-        /></button>
-      </div>
-      <div class="fail-screen">
-        <img class="secondbackground app-img" />
-        <img class="light fail-light app-img" />
-        <img class="logo app-img" />
-        <img class="fail-text app-img" />
-        <img class="fail-cash app-img" />
-        <img class="fail-money app-img" />
-        <button
-          class="link"
-          ><img class="fail-download app-img"
-        /></button>
+        </div>
+        <div class="victory-screen">
+          <img class="secondbackground app-img" />
+          <img class="light victory-light app-img" />
+          <img class="logo app-img" />
+          <img class="victory-money app-img" />
+          <img class="victory-text app-img" />
+          <img class="victory-cash app-img" />
+          <img class="victory-download app-img link" />
+        </div>
+        <div class="fail-screen">
+          <img class="secondbackground app-img" />
+          <img class="light fail-light app-img" />
+          <img class="logo app-img" />
+          <img class="fail-text app-img" />
+          <img class="fail-cash app-img" />
+          <img class="fail-money app-img" />
+          <img class="fail-download app-img link" />
+        </div>
       </div>
     </div>
   </body>
