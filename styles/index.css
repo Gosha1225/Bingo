@@ -11,6 +11,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  touch-action: none;
 }
 
 .scalable-wrapper__content {
@@ -21,6 +22,7 @@
   left: 50%;
   top: 50%;
   overflow: hidden;
+  touch-action: none;
 }
 
 .first-screen {
@@ -31,31 +33,37 @@
   flex-direction: column;
   align-items: center;
   gap: 50px;
+  touch-action: none;
 }
 
 .upper-box-background {
   left: 0px;
+  touch-action: none;
 }
 
 .upper-box-container {
   position: absolute;
   display: flex;
   flex-direction: row;
+  touch-action: none;
 }
 
 .menu {
   left: 220px;
   top: 18px;
+  touch-action: none;
 }
 
 .score {
   top: 10px;
   left: -50px;
+  touch-action: none;
 }
 
 .time {
   top: 10px;
   left: -250px;
+  touch-action: none;
 }
 
 .balls {
@@ -65,6 +73,7 @@
   width: 97%;
   top: 100px;
   left: 540px;
+  touch-action: none;
 }
 
 .ball {
@@ -76,18 +85,21 @@
   height: 90px;
   transform-origin: center;
   transform: rotate(0deg);
+  touch-action: none;
 }
 
 .ball1 {
   position: absolute;
   left: 0px;
   top: 0px;
+  touch-action: none;
 }
 
 .ball2 {
   position: absolute;
   left: 115px;
   top: 0px;
+  touch-action: none;
 }
 
 .ball3 {
@@ -95,30 +107,35 @@
   top: 0px;
   left: 230px;
   z-index: 5;
+  touch-action: none;
 }
 
 .ball4 {
   position: absolute;
   top: 0px;
   left: 345px;
+  touch-action: none;
 }
 
 .ball5 {
   position: absolute;
   top: 0px;
   left: 460px;
+  touch-action: none;
 }
 
 .ball6 {
   position: absolute;
   top: 0px;
   left: 575px;
+  touch-action: none;
 }
 
 .ball7 {
   position: absolute;
   top: 0px;
   left: 690px;
+  touch-action: none;
 }
 
 .table-name {
@@ -127,41 +144,49 @@
   width: 95%;
   top: 220px;
   left: 12px;
+  touch-action: none;
 }
 
 .name {
   width: 97px;
+  touch-action: none;
 }
 
 .B {
   left: 0px;
   background-color: red;
+  touch-action: none;
 }
 
 .I {
   left: 102px;
   background-color: green;
+  touch-action: none;
 }
 
 .N {
   left: 204px;
   background-color: aqua;
+  touch-action: none;
 }
 
 .G {
   left: 308px;
   background-color: purple;
+  touch-action: none;
 }
 
 .O {
   left: 412px;
   background-color: orange;
+  touch-action: none;
 }
 
 .play-board {
   position: absolute;
   width: 97%;
   top: 280px;
+  touch-action: none;
 }
 
 .first-row {
@@ -171,6 +196,7 @@
   flex-direction: row;
   align-items: center;
   height: 100px;
+  touch-action: none;
 }
 
 .second-row {
@@ -181,6 +207,7 @@
   flex-direction: row;
   align-items: center;
   height: 100px;
+  touch-action: none;
 }
 
 .third-row {
@@ -191,6 +218,7 @@
   flex-direction: row;
   align-items: center;
   height: 100px;
+  touch-action: none;
 }
 
 .forth-row {
@@ -201,6 +229,7 @@
   flex-direction: row;
   align-items: center;
   height: 100px;
+  touch-action: none;
 }
 
 .fifth-row {
@@ -211,6 +240,7 @@
   flex-direction: row;
   align-items: center;
   height: 100px;
+  touch-action: none;
 }
 
 .cell {
@@ -218,127 +248,158 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  touch-action: none;
 }
 
 .cell1 {
   left: 0px;
+  touch-action: none;
 }
 
 .cell2 {
   left: 105px;
+  touch-action: none;
 }
 
 .cell3 {
   left: 210px;
+  touch-action: none;
 }
 
 .cell4 {
   left: 315px;
+  touch-action: none;
 }
 
 .cell5 {
   left: 420px;
+  touch-action: none;
 }
 
 .cell6 {
   left: 0px;
+  touch-action: none;
 }
 
 .cell7 {
   left: 105px;
+  touch-action: none;
 }
 
 .cell8 {
   left: 210px;
+  touch-action: none;
 }
 
 .cell9 {
   left: 315px;
+  touch-action: none;
 }
 
 .cell10 {
   left: 420px;
+  touch-action: none;
 }
 
 .cell11 {
   left: 0px;
+  touch-action: none;
 }
 
 .cell12 {
   left: 105px;
+  touch-action: none;
 }
 
 .cell13 {
   left: 210px;
+  touch-action: none;
 }
 
 .cell14 {
   left: 315px;
+  touch-action: none;
 }
 
 .cell15 {
   left: 420px;
+  touch-action: none;
 }
 
 .cell16 {
   left: 0px;
+  touch-action: none;
 }
 
 .cell17 {
   left: 105px;
+  touch-action: none;
 }
 
 .cell18 {
   left: 210px;
+  touch-action: none;
 }
 
 .cell19 {
   left: 315px;
+  touch-action: none;
 }
 
 .cell20 {
   left: 420px;
+  touch-action: none;
 }
 
 .cell21 {
   left: 0px;
+  touch-action: none;
 }
 
 .cell22 {
   left: 105px;
+  touch-action: none;
 }
 
 .cell23 {
   left: 210px;
   z-index: 5;
+  touch-action: none;
 }
 
 .cell24 {
   left: 315px;
+  touch-action: none;
 }
 
 .cell25 {
   left: 420px;
+  touch-action: none;
 }
 
 .number {
   width: 100px;
+  touch-action: none;
 }
 
 .purple-board {
   opacity: 0;
+  touch-action: none;
 }
 
 .red-board {
   opacity: 0;
+  touch-action: none;
 }
 
 .yellow-board {
   opacity: 0;
+  touch-action: none;
 }
 
 .scarab-board {
   left: 11px;
+  touch-action: none;
 }
 
 .footer {
@@ -349,6 +410,7 @@
   flex-direction: row;
   align-items: center;
   top: 810px;
+  touch-action: none;
 }
 
 .bar {
@@ -366,18 +428,22 @@
     rgba(109, 7, 255, 1) 0%,
     rgba(183, 122, 249, 1) 100%
   );
+  touch-action: none;
 }
 
 .boarder {
   left: 10px;
+  touch-action: none;
 }
 
 .clock {
   left: 219px;
+  touch-action: none;
 }
 
 .bingo {
   left: 350px;
+  touch-action: none;
 }
 
 .victory-screen {
@@ -391,28 +457,34 @@
   top: -960px;
   align-items: center;
   z-index: 6;
+  touch-action: none;
 }
 
 .logo {
   left: 115px;
   top: 100px;
+  touch-action: none;
 }
 
 .victory-money {
   top: 0px;
+  touch-action: none;
 }
 
 .victory-text {
   top: 560px;
+  touch-action: none;
 }
 
 .victory-cash {
   top: 610px;
+  touch-action: none;
 }
 
 .victory-download {
   position: absolute;
   top: 740px;
+  touch-action: none;
 }
 
 .fail-screen {
@@ -426,40 +498,48 @@
   top: -960px;
   align-items: center;
   z-index: 6;
+  touch-action: none;
 }
 
 .fail-light {
   top: 180px;
+  touch-action: none;
 }
 
 .fail-money {
   top: 180px;
+  touch-action: none;
 }
 
 .fail-text {
   top: 270px;
   left: 40px;
+  touch-action: none;
 }
 
 .fail-cash {
   top: 320px;
   left: 340px;
+  touch-action: none;
 }
 
 .fail-download {
   position: absolute;
   top: 740px;
+  touch-action: none;
 }
 
 .blur {
   top: 70px;
   z-index: 5;
+  touch-action: none;
 }
 
 .choose {
   top: 350px;
   z-index: 5;
   transform: scale(1.2);
+  touch-action: none;
 }
 
 .hand {
@@ -467,18 +547,22 @@
   left: 262px;
   pointer-events: none;
   z-index: 6;
+  touch-action: none;
 }
 
 .hidden {
   display: none;
+  touch-action: none;
 }
 
 .ball-stroke {
   border: 5px solid rgb(255, 242, 65);
   border-radius: 50%;
+  touch-action: none;
 }
 
 .cell-stroke {
   border: 5px solid rgb(255, 242, 65);
   border-radius: 10px;
+  touch-action: none;
 }

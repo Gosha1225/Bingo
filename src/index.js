@@ -29,29 +29,69 @@ import {
   thirdBallAnimation,
 } from "./ballAnimations";
 
+// document.querySelector(".choose").href = "https://www.google.com/";
+
 function getMobileOperatingSystem() {
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
   if (/android/i.test(userAgent)) {
-    document.querySelector(".link").href =
-      "https://play.google.com/store/apps/details?id=com.ludigames.android.anmp.idle.siege&hl=ru&gl=US";
+    // document.querySelector(".link").href =
+    //   "https://play.google.com/store/apps/details?id=com.ludigames.android.anmp.idle.siege&hl=ru&gl=US";
   }
-
   if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-    document.querySelector(".link").href =
-      "https://apps.apple.com/us/app/idle-siege-army-tycoon-game/id1527417124";
+    console.log(26789);
+    window.location = "https://apps.apple.com/us/app/empire-bingo/id1584334464";
   }
 }
+
+const wrapper = document.getElementById("scalable-wrapper");
+const wrapperContent = document.getElementById("scalable-wrapper__content");
+const elHeight = wrapperContent.offsetHeight;
+const elWidth = wrapperContent.offsetWidth;
+
+// window.onload = () => {
+//   handleResize();
+//   setInterval(() => {
+//     handleResize();
+//   }, 500);
+// };
+
+// setInterval(() => {
+//   handleResize();
+// }, 500);
+
+document.querySelectorAll(".link").forEach((el) => {
+  el.addEventListener("pointerdown", (e) => {
+    getMobileOperatingSystem();
+  });
+});
+
+let options = {
+  root: document.querySelector("#scrollArea"),
+  rootMargin: "0px",
+  threshold: 1.0,
+};
+
+let observer = new IntersectionObserver(handleResize, options);
 
 handleResize();
 downloadBtnAnimation();
 lightAnimation();
 
-// backCounting();
+setTimeout(() => {
+  handleResize();
+}, 500);
+
+backCounting();
 let count = 0;
 let victoryCount = 0;
 
 handAnimation();
+
+window.addEventListener("resize", function (event) {
+  var newWidth = window.innerWidth;
+  var newHeight = window.innerHeight;
+});
 
 async function listener(event) {
   count++;
@@ -183,23 +223,39 @@ function onReadyCallback() {
   if (dapi.isViewable()) {
     adVisibleCallback({ isViewable: true });
   }
+  dapi.isViewable() ? startGame() : false;
 
   dapi.addEventListener("viewableChange", adVisibleCallback);
   dapi.addEventListener("adResized", adResizeCallback);
   dapi.addEventListener("audioVolumeChange", audioVolumeChangeCallback);
 }
 
-function userClickedDownloadButton() {
-  if (mraid) {
-    mraid.openStoreUrl();
-    return;
-  }
+try {
+  mraid?.getMaxSize();
+  mraid?.getState();
+} catch (e) {}
 
-  if (dapi.isReady()) {
-    dapi.openStoreUrl();
-    return;
-  }
-  window.open("https://apps.apple.com/us/app/empire-bingo/id1584334464");
+function startGame() {
+  var screenSize = dapi.getScreenSize();
+}
+
+function userClickedDownloadButton() {
+  try {
+    if (mraid) {
+      mraid.openStoreUrl(
+        "https://apps.apple.com/us/app/empire-bingo/id1584334464"
+      );
+    }
+  } catch (e) {}
+
+  try {
+    if (dapi?.isReady()) {
+      dapi.openStoreUrl(
+        "https://apps.apple.com/us/app/empire-bingo/id1584334464"
+      );
+    }
+    window.open("https://apps.apple.com/us/app/empire-bingo/id1584334464");
+  } catch (e) {}
 }
 
 document.querySelectorAll(".link").forEach((el) => {
@@ -209,7 +265,7 @@ document.querySelectorAll(".link").forEach((el) => {
 function adVisibleCallback(event) {
   console.log("isViewable " + event.isViewable);
   if (event.isViewable) {
-    screenSize = dapi.getScreenSize();
+    const screenSize = dapi.getScreenSize();
     //START or RESUME the ad
   } else {
     //PAUSE the ad and MUTE sounds
@@ -217,7 +273,7 @@ function adVisibleCallback(event) {
 }
 
 function adResizeCallback(event) {
-  screenSize = event;
+  const screenSize = event;
   console.log(
     "ad was resized width " + event.width + " height " + event.height
   );
@@ -236,3 +292,7 @@ function audioVolumeChangeCallback(volume) {
     //PAUSE the turn off the sound
   }
 }
+
+window.visualViewport.addEventListener("resize", (e) => {
+  handleResize();
+});

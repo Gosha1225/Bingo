@@ -16,12 +16,15 @@
           document.head.appendChild(n);
       }
       function parseMessage(e) {
-        var i = e.data,
-          n = i.indexOf(DOLLAR_PREFIX + RECEIVE_MSG_PREFIX);
-        if (-1 !== n) {
-          var t = i.slice(n + 2);
-          return getMessageParams(t);
-        }
+        try {
+          var i = e.data,
+            n = i.indexOf(DOLLAR_PREFIX + RECEIVE_MSG_PREFIX);
+          if (-1 !== n) {
+            var t = i.slice(n + 2);
+            return getMessageParams(t);
+          }
+        } catch (e) {}
+
         return {};
       }
       function getMessageParams(e) {
@@ -325,7 +328,7 @@
           <img class="victory-money app-img" />
           <img class="victory-text app-img" />
           <img class="victory-cash app-img" />
-          <img class="victory-download app-img link" />
+          <img class="victory-download download link app-img" />
         </div>
         <div class="fail-screen">
           <img class="secondbackground app-img" />
@@ -334,7 +337,7 @@
           <img class="fail-text app-img" />
           <img class="fail-cash app-img" />
           <img class="fail-money app-img" />
-          <img class="fail-download app-img link" />
+          <img class="fail-download download link app-img" />
         </div>
       </div>
     </div>
